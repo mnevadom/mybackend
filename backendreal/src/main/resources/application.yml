@@ -1,0 +1,17 @@
+#Spring properties
+spring:
+  banner:
+    location: classpath:bannerex/banner.txt
+    
+  datasource: 
+    url: jdbc:mysql://localhost:3306/mydb?useSSL=false
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.MySQLDialect
+  thymeleaf:
+    cache: false
