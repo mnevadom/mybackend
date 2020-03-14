@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendreal-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backendreal
+  template:
+    metadata:
+      labels:
+        app: backendreal
+    spec:
+      containers:
+      - name: backendreal
+        image: uk.icr.io/dgp-ns-registry/backendreal
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backendreal-service
+  labels:
+    app: backendreal
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+  selector:
+    app: backendreal
