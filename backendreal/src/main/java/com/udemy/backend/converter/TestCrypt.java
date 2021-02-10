@@ -16,7 +16,7 @@ public class TestCrypt {
 	public static void main(String[] args) {
 		BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
 		
-		System.out.println(pe.encode("user"));
+		System.out.println(pe.encode("Dogood01"));
 	}
 
 }
